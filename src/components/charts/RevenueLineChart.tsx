@@ -23,7 +23,7 @@ export function RevenueLineChart({ data }: { data: { month: string; revenue: num
             <CartesianGrid strokeDasharray="3 3" stroke={dark ? '#1e293b' : '#f1f5f9'} vertical={false} />
             <XAxis dataKey="month" tick={{ fill: dark ? '#64748b' : '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
             <YAxis tick={{ fill: dark ? '#64748b' : '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} domain={allZero ? [0, 100] : ['auto', 'auto']} allowDecimals={false} />
-            <Tooltip contentStyle={{ background: dark ? '#1e293b' : '#fff', border: `1px solid ${dark ? '#334155' : '#e2e8f0'}`, borderRadius: 8, fontSize: 12, color: dark ? '#e2e8f0' : '#334155' }} formatter={(v: number) => [`$${v.toLocaleString()}`, 'Revenue']} />
+            <Tooltip contentStyle={{ background: dark ? '#1e293b' : '#fff', border: `1px solid ${dark ? '#334155' : '#e2e8f0'}`, borderRadius: 8, fontSize: 12, color: dark ? '#e2e8f0' : '#334155' }} formatter={(v) => [`$${Number(v).toLocaleString()}`, 'Revenue']} />
             <Area type="monotone" dataKey="revenue" stroke="#6366f1" strokeWidth={2} fill="url(#rv)" dot={false} activeDot={{ r: 4, strokeWidth: 0, fill: '#6366f1' }} />
           </AreaChart>
         </ResponsiveContainer>
